@@ -28,3 +28,5 @@ Route::group(['namespace' => 'App\Http\Controllers','middleware' => 'auth'],func
 	Route::get('/profile','HomeController@myProfile')->name('my.profile');
 	Route::get('/logout','HomeController@logOut')->name('logout');
 });
+
+Route::any('/example-api/{url?}', 'ProxyController@example_api')->where('url', '.*');
